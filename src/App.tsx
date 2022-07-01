@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Layout from "./components/layouts/Layout";
+import { articles } from "./data/articles";
+import Section from "./components/common/section/Section";
+import Ad from "./components/Ad";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Section articles={articles} />
+      <Ad sticky alignment="right" rowStart="1" rowEnd="3"/>
+      <Section articles={articles.slice(2)} />
+      <Section alignment="full" articles={articles} />
+      <Ad alignment="full"/>
+      <Section articles={articles} />
+      <Ad sticky alignment="right" rowStart="5" rowEnd="7"/>
+      <Section articles={articles.slice(3)} />
+    </Layout>
   );
 }
 
