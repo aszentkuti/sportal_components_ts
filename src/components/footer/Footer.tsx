@@ -3,7 +3,7 @@ import React from "react";
 interface ILogo {
   image?: string;
   url?: string;
-  alt: string;
+  alt?: string;
 }
 interface ILink {
   text?: string;
@@ -26,7 +26,7 @@ function Footer({ footerData: { links, logos, copyrightText } }: IFooterProps) {
           {logos &&
             logos.map((logo: ILogo, index: number) => (
               <a key={`footer-logo-${index}`} href={logo.url}>
-                <img src={logo.url} alt={logo.alt} />
+                <img src={logo.image} alt={logo.alt} />
               </a>
             ))}
         </div>
